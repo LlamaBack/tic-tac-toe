@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { m n n n n n
   root: true,
   env: { browser: true, es2020: true },
   extends: [
