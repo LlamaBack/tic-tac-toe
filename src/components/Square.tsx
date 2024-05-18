@@ -1,7 +1,9 @@
-function Square({ className, value, onClick }) {
+function Square({ className, value, onClick, playerTurn }) {
+  let hoverClass = null;
+
   const bgClass: any = {
-    "X": " bg-yellow-600",
-    "O": " bg-teal-700"
+    "X": " bg-yellow-400",
+    "O": " bg-teal-500"
     // orange: " bg-orange-700",
     // yellow: " bg-yellow-700",
     // green: " bg-green-700",
@@ -11,13 +13,24 @@ function Square({ className, value, onClick }) {
     // purple: " bg-purple-700",
     // pink: " bg-pink-700",
   }
+  const bgHoverClass: any = {
+    "X": "hover:bg-yellow-400 hover:bg-opacity-80",
+    "O": "hover:bg-teal-500 hover:bg-opacity-80"
+  }
+
+  if (value == null) {
+    hoverClass = `hover:content-[${playerTurn}] ${bgHoverClass[playerTurn]}`
+  }
 
   return (
     <div 
       onClick={onClick}
-      className={`square ${className}` + "text-9xl justify-center items-center flex" + `${bgClass[value]}`}>
+      className={`square ${className}` 
+      + ` ${hoverClass} ${bgClass[value]}`
+      + " text-5xl justify-center items-center flex hover:content-['X']"
+      }>
       {value}
-      </div> //${bgClass[gray]}
+    </div>//   -----${bgHoverClass[value]}
     );
 }
 

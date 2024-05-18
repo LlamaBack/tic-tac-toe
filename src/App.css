@@ -10,3 +10,8 @@ h1 {
   text-align: center;
 }
 
+/* .x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+} */
+

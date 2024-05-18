@@ -25,7 +25,7 @@ const TicTacToe = () => {
   return (
     <div>
       <h1>Tic Tac Toe</h1>
-      <Board squares={squares} onSquareClick={handleSquareClick}></Board>
+      <Board playerTurn={playerTurn} squares={squares} onSquareClick={handleSquareClick}></Board>
     </div>
   );
 }
