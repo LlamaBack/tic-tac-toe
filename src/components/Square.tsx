@@ -14,8 +14,8 @@ function Square({ className, value, onClick, playerTurn }) {
     // pink: " bg-pink-700",
   }
   const bgHoverClass: any = {
-    "X": "hover:bg-yellow-400 hover:bg-opacity-80",
-    "O": "hover:bg-teal-500 hover:bg-opacity-80"
+    "X": "hover:bg-yellow-400 hover:bg-opacity-70",
+    "O": "hover:bg-teal-500 hover:bg-opacity-70"
   }
 
   if (value == null) {
