@@ -55,7 +55,6 @@ function Board( {squares, onSquareClick, playerTurn} ) {
         onClick={()=> onSquareClick(8)} 
         value={squares[8]} 
         className="border-sky-600"/>
-      <Strike/>
     </div>
    );
 }
