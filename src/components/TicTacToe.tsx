@@ -9,7 +9,7 @@ const PLAYER_O = "O"
 const winningCombinations = [
   [0,1,2], [3,4,5], [6,7,8],
   [0,3,6], [1,4,7], [2,5,8],
-  [0,4,8], [2,4,6],
+  [0,4,8], [2,4,6]
 ]
 
 function checkWinner(squares, setGameState) {
@@ -38,20 +38,27 @@ function checkWinner(squares, setGameState) {
 }
 
 const TicTacToe = () => {
-  const [squares, setSquares] = useState(Array(9).fill(null)) //setSquares > rebinds squares to new input. i assume it must be of the same parameter type?
+  const [squares, setSquares] = useState(Array(3).fill(null).map(() => Array(3).fill(null)));
+  //setSquares > rebinds squares to new input. i assume it must be of the same parameter type?
+
   const [playerTurn, setPlayerTurn] = useState(PLAYER_X);
   const [gameState, setGameState] = useState(GameState.inProgress);
 
   const handleSquareClick = (index) => {
-    if (gameState !== GameState.inProgress) {
+    // console.log(squares[index[0]][index[1]])
+
+
+    // if (gameState !== GameState.inProgress) {
+    //   return;
+    // }
+
+    if(squares[index[0]][index[1]] !== null) {
       return;
     }
-    
-    if(squares[index] !== null) {
-      return;
-    }
-    const newSquares = [...squares];
-    newSquares[index] = playerTurn;
+    const newSquares = JSON.parse(JSON.stringify(squares));
+    newSquares[index[0]][index[1]] = playerTurn;
+    // console.log(newSquares[index[0]][index[1]])
+
     setSquares(newSquares)
     if (playerTurn === PLAYER_X) {
       setPlayerTurn(PLAYER_O);
