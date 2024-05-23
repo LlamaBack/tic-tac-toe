@@ -67,7 +67,7 @@ function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
     }
   }
 
-  const isDraw = squares.every((square) => square !== null);
+  const isDraw = !squares.some(row => row.includes(null))
   if (isDraw) {
     setGameState(GameState.draw);
   }
@@ -77,7 +77,6 @@ function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
   } else {
     setPlayerTurn(PLAYER_X);
   }
-
 };
 
 const TicTacToe = () => {
