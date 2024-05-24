@@ -2,8 +2,8 @@ function Square({ className, value, onClick, playerTurn }) {
   let hoverClass = null;
 
   const bgClass: any = {
-    "X": " bg-yellow-400",
-    "O": " bg-teal-500"
+    "X": " !bg-yellow-400",
+    "O": " !bg-teal-500"
     // orange: " bg-orange-700",
     // yellow: " bg-yellow-700",
     // green: " bg-green-700",
