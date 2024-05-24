@@ -3,7 +3,7 @@ import Strike from "./Strike";
 
 function Board( {squares, onSquareClick, playerTurn} ) {
   return ( 
-    <div className="grid grid-cols-[200px_200px_200px] gap-3 grid-rows-[200px_200px_200px] cursor-pointer relative">
+    <div className={`grid grid-cols-${squares.length} gap-3 grid-rows-${squares.length} ` + "cursor-pointer relative"}>
       {squares.map((rows, x) => (
         rows.map((square, y) => (
           <Square playerTurn={playerTurn} 
