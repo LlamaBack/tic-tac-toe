@@ -9,7 +9,7 @@ function Board( {squares, onSquareClick, playerTurn} ) {
           <Square playerTurn={playerTurn} 
           onClick={()=> onSquareClick([x,y])} 
           value={squares[x][y]} 
-          className="bg-blue-600 w-20"/>
+          className="bg-blue-600"/>
         ))
       ))
       }
