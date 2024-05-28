@@ -80,7 +80,7 @@ function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
 };
 
 const TicTacToe = () => {
-  const [squares, setSquares] = useState(Array(5).fill(0).map(() => Array(5).fill(null)));
+  const [squares, setSquares] = useState((Array(4)).fill(null).map(() => Array(4).fill(0)));
   //setSquares > rebinds squares to new input. i assume it must be of the same parameter type?
 
   const [playerTurn, setPlayerTurn] = useState(PLAYER_O);
@@ -108,7 +108,7 @@ const TicTacToe = () => {
 
   return (
     <div>
-      <h1>Tic Tac Toe</h1>
+      <h1 className={"w-screen"}>Tic Tac Toe</h1>
       <Board playerTurn={playerTurn} squares={squares} onSquareClick={handleSquareClick}></Board>
       <GameOver gameState={gameState} />
     </div>

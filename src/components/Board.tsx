@@ -3,23 +3,16 @@ import Strike from "./Strike";
 
 function Board( {squares, onSquareClick, playerTurn} ) {
   return ( 
-    <div className={`grid grid-cols-${squares.length} gap-3 grid-rows-${squares.length} ` + "cursor-pointer relative"}>
+    <div className={`grid gap-3 grid-cols-${squares.length} grid-rows-${squares.length} flex-wrap place-items-center`}>
       {squares.map((rows, x) => (
         rows.map((square, y) => (
           <Square playerTurn={playerTurn} 
           onClick={()=> onSquareClick([x,y])} 
           value={squares[x][y]} 
-          className="bg-blue-600"/>
+          className="bg-blue-600 w-20"/>
         ))
       ))
-       }
-
-      {/* <Square
-        playerTurn={playerTurn} 
-        onClick={()=> onSquareClick([0,0])} 
-        value={squares[0][0]} 
-        className="border-r-8 border-b-8 border-sky-600"
-      /> */}
+      }
 
 
     </div>
