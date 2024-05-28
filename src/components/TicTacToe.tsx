@@ -80,7 +80,7 @@ function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
 };
 
 const TicTacToe = () => {
-  const [squares, setSquares] = useState((Array(4)).fill(null).map(() => Array(4).fill(0)));
+  const [squares, setSquares] = useState((Array(4)).fill(null).map(() => Array(4).fill(null)));
   //setSquares > rebinds squares to new input. i assume it must be of the same parameter type?
 
   const [playerTurn, setPlayerTurn] = useState(PLAYER_O);

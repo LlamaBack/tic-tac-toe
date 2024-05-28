@@ -27,7 +27,7 @@ function Square({ className, value, onClick, playerTurn }) {
       onClick={onClick}
       className={`square ${className}` 
       + ` ${hoverClass} ${bgClass[value]}`
-      + " text-5xl justify-center items-center flex hover:content-['X']"
+      + " text-5xl justify-center items-center flex hover:content-['X'] h-32 w-32"
       }>
       {value}
     </div>//   -----${bgHoverClass[value]}
