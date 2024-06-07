@@ -4,14 +4,6 @@ function Square({ className, value, onClick, playerTurn }) {
   const bgClass: any = {
     "X": " !bg-yellow-400",
     "O": " !bg-teal-500"
-    // orange: " bg-orange-700",
-    // yellow: " bg-yellow-700",
-    // green: " bg-green-700",
-    // teal: " bg-teal-700",
-    // blue: " bg-blue-700",
-    // indigo: " bg-indigo-700",
-    // purple: " bg-purple-700",
-    // pink: " bg-pink-700",
   }
   const bgHoverClass: any = {
     "X": "hover:bg-yellow-400 hover:bg-opacity-70",

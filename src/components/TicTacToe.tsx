@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import Board from "./Board";
 import GameState from "./GameState";
 import GameOver from "./GameOver";
+import History from "./History";
 const PLAYER_X = "X"
 const PLAYER_O = "O"
+var history = [];
+const n = 3;
 
 function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
   for (let i = 0; i < squares.length; i++){
-    console.log(playerTurn)
     if( squares[i][index[1]] !== playerTurn) {
         break;
     }
@@ -79,8 +81,16 @@ function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
   }
 };
 
+function recordMove(last_move) {
+  history.push(last_move)
+};
+
+function giikerLogic() {
+  // if history.length === 
+};
+
 const TicTacToe = () => {
-  const [squares, setSquares] = useState((Array(5)).fill(null).map(() => Array(5).fill(null)));
+  const [squares, setSquares] = useState((Array(n)).fill(null).map(() => Array(n).fill(null)));
   //setSquares > rebinds squares to new input. i assume it must be of the same parameter type?
 
   const [playerTurn, setPlayerTurn] = useState(PLAYER_O);
@@ -99,6 +109,7 @@ const TicTacToe = () => {
     const newSquares = JSON.parse(JSON.stringify(squares));
     newSquares[index[0]][index[1]] = playerTurn;
     setSquares(newSquares);
+    recordMove([index[0], index[1]]);
   };
 
   useEffect(() => {
