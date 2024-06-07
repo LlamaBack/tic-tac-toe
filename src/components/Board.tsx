@@ -15,8 +15,6 @@ function Board( {squares, onSquareClick, playerTurn} ) {
           ))
         ))
         }
-
-
       </div>
     </div>
    );

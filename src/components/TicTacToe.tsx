@@ -5,7 +5,8 @@ import GameOver from "./GameOver";
 import History from "./History";
 const PLAYER_X = "X"
 const PLAYER_O = "O"
-var history = [];
+let history = [];
+let giikerLogic = 1;
 const n = 3;
 
 function checkWinner(squares, setGameState, index, playerTurn, setPlayerTurn) {
@@ -85,9 +86,12 @@ function recordMove(last_move) {
   history.push(last_move)
 };
 
-function giikerLogic() {
-  // if history.length === 
-};
+// function giikerLogic() {
+//   if (history.length === n * 2) {
+//     return history.shift();
+//   }
+
+// };
 
 const TicTacToe = () => {
   const [squares, setSquares] = useState((Array(n)).fill(null).map(() => Array(n).fill(null)));
@@ -109,7 +113,23 @@ const TicTacToe = () => {
     const newSquares = JSON.parse(JSON.stringify(squares));
     newSquares[index[0]][index[1]] = playerTurn;
     setSquares(newSquares);
+
+
     recordMove([index[0], index[1]]);
+
+    if (history.length === n * 2 + 1 && giikerLogic === 1) {
+      let oldestSquare = history.shift();
+      newSquares[oldestSquare[0]][oldestSquare[1]] = null;
+    }
+
+    if (history.length === n * 2 && giikerLogic === 1) {
+      if (playerTurn === "X") {
+        newSquares[history[0][0]][history[0][1]] = "o";
+      } else {
+        newSquares[history[0][0]][history[0][1]] = "x";
+      }
+    }
+
   };
 
   useEffect(() => {
